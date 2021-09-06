@@ -1,0 +1,24 @@
+service: lambda-hello
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  region: eu-west-3
+  lambdaHashingVersion: 20201221
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "ecr:InitiateLayerUpload"
+            - "ecr:SetRepositoryPolicy"
+            - "ecr:GetRepositoryPolicy"
+          Resource: [ "arn:aws:ecr:eu-west-3:411415562544:repository/*" ]
+
+functions:
+  hello:
+    image: 411415562544.dkr.ecr.eu-west-3.amazonaws.com/lambda-hello@sha256:57c508d9a94cdf97601124e5592fb8004f8bc9683f732bb5e4f4c712f73d13fe
+    timeout: 900
+    events:
+      - schedule: cron(30 2 ? * SAT *)
