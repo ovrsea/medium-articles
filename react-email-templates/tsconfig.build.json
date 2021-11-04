@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "outDir": "dist",
+    "target": "es5",
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "esnext",
+      "es2015"
+    ],
+    "noEmit": false
+  },
+  "include": [
+    "src",
+    "global.d.ts",
+    "renderEmail.tsx",
+    "generateSignupEmail.ts"
+  ]
+}
